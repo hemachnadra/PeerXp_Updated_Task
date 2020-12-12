@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manage Tickets</title>
+</head>
+<body>
+
+{% block content %}
+
+
+<div class="row">
+<div class="modal fade" id="newIssue" tabindex="-1" role="dialog" aria-labelledby="newIssue" aria-hidden="true">
+						<div class="modal-wrapper">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header bg-blue">
+
+									<div class="modal-footer">
+											
+											<button type="submit" class="btn btn-primary pull-right"><i class="fa fa-pencil"></i><a href="{% url 'submit_ticket'}">Create Ticket</a> </button>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+</div>
+
+<div class="row">
+<div class="col-md-12">
+{% for ticket in tickets%}
+							<ul class="list-group fa-padding">
+								<li class="list-group-item" data-toggle="modal" data-target="#issue">
+									<div class="media">
+										<i class="fa fa-cog pull-left"></i>
+										<div class="media-body">
+											<strong>{{ticket.subject}}</strong> <span class="label label-danger">{{ticket.priority}}</span><span class="number pull-right"></span>
+											<p class="info">{{ticket.department}},Open By<a href="#">{{ticket.contact_name}}</a><i class="fa fa-comments"></i> <a href="#">Read more>>></a></p>
+										</div>
+									</div>
+								</li>
+
+		</ul>
+
+{% endfor%}
+	</div>
+
+
+
+{% endblock %}
+
+
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Submit Ticket </title>
+</head>
+<body>
+{% block content %}
+
+	
+	
+<div class="container">
+<div class="jumboturn">
+
+<form method="POST" class="well form-horizontal" action=" " method="post"  id="contact_form">
+<fieldset>
+	  
+
+<!-- Form Name -->
+<legend><center><h2><b>Submit Ticket</b></h2></center></legend><br>
+<legend><h4><b>Ticket Information</b></h4></legend><br>
+<!-- Text input-->
+{% csrf_token %}    
+	  
+
+
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" required >Department</label>  
+  <div class="col-md-6 inputGroupContainer">
+  <div class="input-group">
+  	<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    
+      {{form.department}}
+    
+  
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Category</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+    	<span class="input-group-addon"><i class="glyphicon glyphicon-list" required='True'></i></span>
+    		{{form.category}}
+
+  	  
+    </div>
+  </div>
+</div>
+
+
+  
+<!-- Text input-->
+<br>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">PWSLab Project URL</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  		{{form.pwslab_project_url}}
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Subject</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  {{form.subject}}
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Description</label> 	
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  		{{form.description}}
+    </div>
+  </div>
+</div>
+
+<legend><h4><b>Contact Details</b></h4></legend><br>
+
+<!-- Text input-->
+       <div class="form-group">
+  <label class="col-md-4 control-label">Contact Name</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  		{{form.contact_name}}
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+       <div class="form-group">
+  <label class="col-md-4 control-label">E-Mail</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  		{{form.email}}
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+       
+<div class="form-group">
+  <label class="col-md-4 control-label">Phone</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  {{form.phone}}
+    </div>
+  </div>
+</div>
+
+<legend><h4><b> Additional Information</b></h4></legend><br>
+<div class="form-group">
+  <label class="col-md-4 control-label" required >Priority</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  	<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    {{form.priority}}
+  </select>
+</div>
+</div>
+</div>
+
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroupFileAddon01">Attach a file</span>
+  </div>
+  <div class="custom-file col-md-4 control-label">
+  			{{form.upload_file}}
+    
+    <!--<label class="custom-file-label" for="inputGroupFile01">Choose file</label>-->
+  </div>
+</div>
+<br>
+
+
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+  </div>
+</div>
+</center>
+
+</fieldset>
+</form>
+</div>
+
+
+</div>
+    </div>
+</div>
+
+
+	
+</div>
+
+</div>
+</div>
+
+
+
+    <!-- /.container -->
+    {% endblock %}
+</body>
+</html>
